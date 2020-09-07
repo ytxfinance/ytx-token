@@ -460,6 +460,10 @@ contract YTX is Ownable, IERC20 {
     string private _name = 'YTX';
     string private _symbol = 'YTX';
     uint8 private _decimals = 18;
+    
+    constructor () public {
+        _balances[msg.sender] = _totalSupply;
+    }
 
     function name() public view returns (string memory) {
         return _name;
